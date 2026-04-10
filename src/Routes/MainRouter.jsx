@@ -1,0 +1,20 @@
+ import React from 'react'
+import About from '../Pages/About'
+import Product from '../Pages/Product'
+import { Route, Routes } from 'react-router-dom'
+import Home from '../Pages/Home'
+import Login from '../Pages/Login'
+ import  Register  from "../Pages/Register";
+ const MainRouter = () => {
+   return (
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+   )
+ }
+ 
+ export default MainRouter
