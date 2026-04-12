@@ -1,14 +1,65 @@
- import  axios from "../../Api/AxiosConfig";
+import instance from "../../Api/AxiosConfig";
+import { loaduser } from "../../reducers/UserSlice";
+
+
+export const asyncuserregister = (user) => async (dispatch, getState) => {
+  try {
+    const res = await instance.post("/users", user);
+    console.log(res);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 
 
- export const asyncuserregister=(user)=> async(dispatch,getState)=>{
- 
-try {
-     const res= await axios.post("/users", user);
-     console.log(res)
-} catch (error) {
-    console.log(error)
-}
-
+export const asyncCurrentuser = () => async (dispatch) => {
+  try {
+    
+     const user= JSON.parse(localStorage.getItem("user"))
+     if(user) dispatch(loaduser(user));
+     else console.log("user not found");
+     
+  }
+  catch (error) {
+  console.log(error)
  }
+};
+export const asynclogoutinuser = () => async (dispatch) => {
+  try {
+  
+      localStorage.removeItem("user");
+    console.log("user is logout!")
+  }
+  catch (error) {
+  console.log(error)
+ }
+};
+
+
+export const asyncloginuser = (user) => async (dispatch) => {
+  try {
+    const { data } = await instance.get(
+      `/users?email=${encodeURIComponent(user.email)}`
+    );
+
+    console.log("login response data:", data[0]);
+    localStorage.setItem("user",JSON.stringify(data[0]))
+
+    if (Array.isArray(data) && data.length > 0) {
+      const loggedInUser = data[0];
+      if (loggedInUser.password === user.password) {
+        dispatch(loaduser(loggedInUser));
+        return loggedInUser;
+      }
+      console.log("Login failed: password mismatch.");
+      return null;
+    }
+
+    console.log("Login failed: no matching email found.");
+    return null;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
