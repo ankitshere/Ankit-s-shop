@@ -5,13 +5,15 @@ import { Route, Routes } from 'react-router-dom'
 import Home from '../Pages/Home'
 import Login from '../Pages/Login'
  import  Register  from "../Pages/Register";
+import CreateProduct from '../Admin/CreateProduct'
  const MainRouter = () => {
    return (
         <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />   } />
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admin/CreteProduct" element={<CreateProduct/>} />
         <Route path="/register" element={<Register />} />
       </Routes>
    )

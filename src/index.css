@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fieldIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-card   { animation: fadeSlideIn 0.4s cubic-bezier(0.22,1,0.36,1) both; }
+.field       { animation: fieldIn 0.35s cubic-bezier(0.22,1,0.36,1) both; }
+.field:nth-child(1) { animation-delay: 0.05s; }
+.field:nth-child(2) { animation-delay: 0.10s; }
+.field:nth-child(3) { animation-delay: 0.15s; }
+.field:nth-child(4) { animation-delay: 0.20s; }
+.field:nth-child(5) { animation-delay: 0.22s; }
+.submit-btn  { animation: fieldIn 0.35s 0.3s cubic-bezier(0.22,1,0.36,1) both; }
+
+
+  

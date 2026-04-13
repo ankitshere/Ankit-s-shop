@@ -5,6 +5,7 @@ import Nav from "./Components/Nav";
 import MainRouter from "./Routes/MainRouter";
 import { asyncCurrentuser } from "./Store/actions/UserAction";
 import { useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastify";
 const App = () => {
 
   const dispatch=useDispatch()
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
    <div>
+      <ToastContainer/>
     <Nav/>
     <MainRouter/>
    </div>
