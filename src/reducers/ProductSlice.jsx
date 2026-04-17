@@ -11,7 +11,7 @@ const initialState ={
     reducers:{
         loadproduct:(state, action)=>{
 
-            state.product=action.payload;
+            state.data=action.payload;
         }
     }
 

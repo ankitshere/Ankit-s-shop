@@ -15,7 +15,7 @@ const App = () => {
   useEffect(()=>{
      dispatch( asyncCurrentuser())
      dispatch(asyncloadProduct())
-  })
+  },[])
 
   return (
    <div>

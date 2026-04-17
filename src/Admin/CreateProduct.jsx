@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { asyncuserregister } from '../Store/actions/UserAction';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { asyncCreateProduct } from '../Store/actions/ProductAction';
 
 const CreateProduct = () => {
 
@@ -19,16 +20,11 @@ const CreateProduct = () => {
     const CreateProducthandler = (product) => {
         console.log(product)
         product.id = nanoid();
-        console.log(product);
+dispatch(asyncCreateProduct(product))
         Navigate("/product")
 
 toast.success("Product Created ✅");
         
-        
-        
-        
-
-       
     };
 
     return (
@@ -46,7 +42,7 @@ toast.success("Product Created ✅");
     <label className="flex flex-col gap-1.5">
       <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Product name</span>
       <input
-        {...register("product-name")}
+       {...register("title")}
         type="text"
         placeholder="e.g. Wireless Headphones"
         className="h-9 px-3 rounded-lg border border-blue-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all w-full"
