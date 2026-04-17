@@ -2,14 +2,18 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import { asyncDeteleProduct, asyncupdateProduct } from '../Store/actions/ProductAction'
+import { ToastContainer, toast } from "react-toastify";
 
 const ProductDetails = () => {
 
  const {id}=useParams()
-const products = useSelector((state) => state.productsreducer.data)
+const products = useSelector((state) => state.productsreducer?.data)
   console.log(products)
+const users = useSelector((state) => state.usersreducer?.user)
+  console.log(users )
   const product=products?.find((product)=>product.id==id);
- console.log(product)
+
 
 
 
@@ -30,12 +34,21 @@ const products = useSelector((state) => state.productsreducer.data)
       }
     });
     const Navigate = useNavigate();
-    const UpdateProducthandler = (product) => {
+    const UpdateProducthandler = (product ) => {
         console.log(product)
-dispatch(asyncUpdateProduct(product))
-        Navigate("/product")
+dispatch(asyncupdateProduct(id,product))
+       
 
-toast.success("Product Created ✅");
+toast.success("Product Updated ");
+
+        
+    };
+    const DeleteProducthandler = () => {
+dispatch(asyncDeteleProduct(id))
+       
+Navigate("/product")
+toast.success("Product Deleted ");
+
         
     };
 
@@ -113,7 +126,8 @@ toast.success("Product Created ✅");
 </div>
 
 <div  className="flex justify-center py-10 px-4">
-    <form
+{users && users?.isAdmin &&(
+   <form
     onSubmit={handleSubmit(UpdateProducthandler)}
     className="w-full max-w-110 bg-gray-200 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
   > 
@@ -179,8 +193,17 @@ toast.success("Product Created ✅");
     >
       update product
     </button>
+    <button
+      type="button"
+     onClick={() => DeleteProducthandler(asyncDeteleProduct)}
+      className="mt-2 h-10 w-full rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-blue-700 active:scale-[0.98] transition-all"
+    >
+      Delete product
+    </button>
 
   </form>
+)}
+   
 </div>
 </section>
   ):"loading product..."

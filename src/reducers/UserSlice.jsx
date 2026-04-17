@@ -12,6 +12,9 @@ const initialState ={
         loaduser:(state, action)=>{
 
             state.user=action.payload;
+        },
+        removeuser:(state,action)=>{
+            state.users=null;
         }
     }
 
@@ -19,4 +22,4 @@ const initialState ={
 
 export default userSlice.reducer;
 
-export const {loaduser} =userSlice.actions
+export const {loaduser , removeuser} =userSlice.actions

@@ -1,8 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { asynclogoutinuser } from "../Store/actions/UserAction";
 
 const Nav = () => {
+   
+
+  const navigate=useNavigate()
+
+  const dispatch=useDispatch()
+
+  const logouthandler=()=>{
+    dispatch(asynclogoutinuser());
+    Navigate("/")
+  }
   const user = useSelector((state) => state.usersreducer.user);
   console.log(user);
 
@@ -42,6 +53,7 @@ const Nav = () => {
           >
             Create Product
           </NavLink>
+          <button onClick={()=>logouthandler()}>logOut</button>
         </>
       ) : (
         <>
