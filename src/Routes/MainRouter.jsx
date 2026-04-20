@@ -11,11 +11,11 @@ import { useSelector } from 'react-redux'
 import UserProfile from '../Pages/User/UserProfile'
  const MainRouter = () => {
 
- const {data}=useSelector((state)=> state.usersreducer)
-console.log(data)
+const user = useSelector((state) => state.usersreducer.user)
+console.log(user)
    return (
         <Routes>
-        <Route path="/" element={ data? <Product/> :  <Home />} />
+        <Route path="/" element={ user ? <Product /> :  <Home />} />
         <Route path="/about" element={<About />   } />
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} />

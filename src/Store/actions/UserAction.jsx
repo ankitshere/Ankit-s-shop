@@ -79,18 +79,37 @@ export const asyncloginuser = (user) => async (dispatch) => {
 //   }
 // };
 
-4
-export const asyncupdateuser =(id, user) => async (dispatch, getState) => {
 
-try {
-const { data } = await instance.patch(`/users/${id}`, user);
-console.log(data);
-localStorage.setItem("user", JSON.stringify(data[0]));
 
-} catch (error) {
-console.log(error);
 
-}
 
+
+export const asyncupdateuser = (id, user) => async (dispatch) => {
+  try {
+    const res = await instance.patch(`/users/${id}`, user);
+
+    dispatch({
+      type: "UPDATE_USER",
+      payload: res.data,
+    });
+
+    // ✅ localStorage
+    localStorage.setItem("user", JSON.stringify(res.data));
+
+  } catch (error) {
+    console.log(error);
+  }
 };
 
+
+export const asyncDeteleuser = ( id ) => async(dispatch) => {
+  try {
+    
+     await axios.delete(`http://localhost:3000/users/${id}`);
+dispatch(asyncloadProduct());
+     
+  }
+  catch (error) {
+  console.log(error)
+ }
+};

@@ -15,7 +15,7 @@ const Nav = () => {
     Navigate("/")
   }
   const user = useSelector((state) => state.usersreducer.user);
-  console.log(user);
+
 
   return (
     <nav className="flex justify-center item-center gap-10 p-5">

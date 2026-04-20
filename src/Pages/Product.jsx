@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Product = () => {
 const products = useSelector((state) => state.productsreducer.data)
-  console.log(products)
+
  
   const renderProducts=products.map((products,key)=>{
     return  <div key={products.id} className="w-full sm:w-[48%] md:w-[25%] bg-white border rounded shadow-sm hover:shadow-md transition p-3 flex flex-col">
