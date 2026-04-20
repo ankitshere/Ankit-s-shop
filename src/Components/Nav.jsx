@@ -42,19 +42,23 @@ const Nav = () => {
         to="/product"
       >
         Product
-      </NavLink>
+      </NavLink> 
       {user ? (
-        <>
+        <><>
           <NavLink
-            className={({ isActive }) =>
-              isActive ? "text-blue-500 font-medium underline" : "font-light"
-            }
+            className={({ isActive }) => isActive ? "text-blue-500 font-medium underline" : "font-light"}
             to="/admin/CreteProduct"
           >
             Create Product
           </NavLink>
-          <button onClick={()=>logouthandler()}>logOut</button>
-        </>
+          <button onClick={() => logouthandler()}>logOut</button>
+        </><NavLink
+          className={({ isActive }) => isActive ? "text-blue-500 font-medium underline" : "font-light"}
+          to="User/UserProfile"
+        >
+            Setings
+          </NavLink></>
+        
       ) : (
         <>
           {" "}
@@ -66,6 +70,8 @@ const Nav = () => {
           >
             Login
           </NavLink>
+         
+
         </>
       )}
     </nav>

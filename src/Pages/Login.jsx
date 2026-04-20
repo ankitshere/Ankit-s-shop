@@ -14,7 +14,7 @@ const Login = () => {
 
     if (result) {
       reset();
-      navigate("/");
+      navigate("/product");
       return;
     }
   }

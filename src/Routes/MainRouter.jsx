@@ -7,13 +7,19 @@ import Login from '../Pages/Login'
  import  Register  from "../Pages/Register";
 import CreateProduct from '../Admin/CreateProduct'
 import ProductDetails from '../Admin/ProductDetails'
+import { useSelector } from 'react-redux'
+import UserProfile from '../Pages/User/UserProfile'
  const MainRouter = () => {
+
+ const {data}=useSelector((state)=> state.usersreducer)
+console.log(data)
    return (
         <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={ data? <Product/> :  <Home />} />
         <Route path="/about" element={<About />   } />
         <Route path="/product" element={<Product />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/User/UserProfile" element={<UserProfile />} />
         <Route path="/admin/CreteProduct" element={<CreateProduct/>} />
         <Route path="/Products/:id" element={<ProductDetails/>} />
         <Route path="/register" element={<Register />} />

@@ -1,5 +1,7 @@
+import { Navigate } from "react-router-dom";
 import instance from "../../Api/AxiosConfig";
 import { loaduser, removeuser } from "../../reducers/UserSlice";
+import axios from "axios";
 
 
 export const asyncuserregister = (user) => async (dispatch, getState) => {
@@ -35,6 +37,7 @@ export const asynclogoutinuser = () => async (dispatch) => {
   catch (error) {
   console.log(error)
  }
+ Navigate("/home")
 };
 
 
@@ -64,3 +67,30 @@ export const asyncloginuser = (user) => async (dispatch) => {
     return null;
   }
 };
+
+// export const asyncUpdateuser = ( id ,user) => async (dispatch) => {
+//   try {
+//     const {data} = await axios.patch("/users"+id, user);
+    
+//     // localStorage.setItem("user",JSON.stringify(data[0]))
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+4
+export const asyncupdateuser =(id, user) => async (dispatch, getState) => {
+
+try {
+const { data } = await instance.patch(`/users/${id}`, user);
+console.log(data);
+localStorage.setItem("user", JSON.stringify(data[0]));
+
+} catch (error) {
+console.log(error);
+
+}
+
+};
+
