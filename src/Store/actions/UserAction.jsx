@@ -61,25 +61,13 @@ export const asyncloginuser = (user) => async (dispatch) => {
     }
 
     console.log("Login failed: no matching email found.");
+  
     return null;
   } catch (error) {
     console.log(error);
     return null;
   }
 };
-
-// export const asyncUpdateuser = ( id ,user) => async (dispatch) => {
-//   try {
-//     const {data} = await axios.patch("/users"+id, user);
-    
-//     // localStorage.setItem("user",JSON.stringify(data[0]))
-//     console.log(data);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-
 
 
 
@@ -106,7 +94,7 @@ export const asyncDeteleuser = ( id ) => async(dispatch) => {
   try {
     
      await axios.delete(`http://localhost:3000/users/${id}`);
-dispatch(asyncloadProduct());
+dispatch(asynclogoutinuser());
      
   }
   catch (error) {

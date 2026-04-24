@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import { asyncDeteleuser, asynclogoutinuser, asyncupdateuser, asyndeleteuser } from '../../Store/actions/UserAction'
+import { asyncDeteleuser, asynclogoutinuser, asyncupdateuser  } from '../../Store/actions/UserAction'
 
 const UserProfile = () => {
 
@@ -46,13 +46,13 @@ navigate("/login");
 
 const DeleteProducthandler = () => {
   dispatch(asyncDeteleuser(users.id));
-navigate("/login");
+
 };
 
   return users ?  (
       <form
         onSubmit={handleSubmit(updateProfilehandler)}
-        className="w-full max-w-110 bg-gray-200 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
+        className="w-full max-w-110 justify-center py-2 px-4 bg-gray-200 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
       > 
         <header className="mb-2">
           <h2 className="text-2xl  text-center font-medium text-gray-900">Your  Profile</h2>
@@ -98,7 +98,7 @@ navigate("/login");
         </button>
         <button
           type="button"
-         onClick={() => DeleteProducthandler(asyndeleteuser)}
+         onClick={() => DeleteProducthandler(asyncDeteleuser)}
           className="mt-2 h-10 w-full rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-blue-700 active:scale-[0.98] transition-all"
         >
           Delete profile

@@ -27,14 +27,7 @@ const Nav = () => {
       >
         Home
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "text-blue-500 font-medium underline" : "font-light"
-        }
-        to="/about"
-      >
-        About
-      </NavLink>
+   
       <NavLink
         className={({ isActive }) =>
           isActive ? "text-blue-500 font-medium underline" : "font-light"
@@ -45,12 +38,14 @@ const Nav = () => {
       </NavLink> 
       {user ? (
         <><>
-          <NavLink
+{user && user?.isAdmin &&(
+            <NavLink
             className={({ isActive }) => isActive ? "text-blue-500 font-medium underline" : "font-light"}
             to="/admin/CreteProduct"
           >
             Create Product
           </NavLink>
+)}
           <button onClick={() => logouthandler()}>logOut</button>
         </><NavLink
           className={({ isActive }) => isActive ? "text-blue-500 font-medium underline" : "font-light"}
