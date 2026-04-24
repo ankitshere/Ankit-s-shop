@@ -50,61 +50,61 @@ const DeleteProducthandler = () => {
 };
 
   return users ?  (
-      <form
-        onSubmit={handleSubmit(updateProfilehandler)}
-        className="w-full max-w-110 justify-center py-2 px-4 bg-gray-200 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
-      > 
-        <header className="mb-2">
-          <h2 className="text-2xl  text-center font-medium text-gray-900">Your  Profile</h2>
-        </header>
-    
-        <label className="flex flex-col gap-1.5">
-          <span className="text-md font-medium text-gray-500  tracking-wide">Username </span>
-          <input
-           {...register("username")}
-            type="text"
-            placeholder="Enter your username"
-            className="h-9 px-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all w-full"
-          />
-          <span className="text-md font-medium text-gray-500 tracking-wide">Email adress</span>
-          <input
-           {...register("email")}
-            type="email"
-            placeholder="Enter your email"
-            className="h-9 px-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all w-full"
-          />
-          <span className="text-md font-medium text-gray-500 tracking-wide">password</span>
-          <input
-           {...register("password")}
-            type="password"
-            placeholder="Enter your password"
-            className="h-9 px-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all w-full"
-          />
-        </label>
-    
-        
-    
-    
-        
-    
-        <button
+<form
+  onSubmit={handleSubmit(updateProfilehandler)}
+  className="w-full max-w-md mx-auto mt-6 bg-gray-300 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
+>
+  <h2 className="text-2xl text-center font-semibold text-gray-900">
+    Your Profile
+  </h2>
 
-        
-         onClick={() => updateProfilehandler(asyncupdateuser)}
-          type="submit"
-          className="mt-2 h-10 w-full rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 active:scale-[0.98] transition-all"
-        >
-          update profile
-        </button>
-        <button
-          type="button"
-         onClick={() => DeleteProducthandler(asyncDeteleuser)}
-          className="mt-2 h-10 w-full rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-blue-700 active:scale-[0.98] transition-all"
-        >
-          Delete profile
-        </button>
-    
-      </form>
+  <div className="flex flex-col gap-1">
+    <label className="text-sm font-medium text-gray-600">Username</label>
+    <input
+      {...register("username")}
+      type="text"
+      placeholder="Enter username"
+      className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
+  </div>
+
+  <div className="flex flex-col gap-1">
+    <label className="text-sm font-medium text-gray-600">Email</label>
+    <input
+      {...register("email")}
+      type="email"
+      placeholder="Enter email"
+      className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
+  </div>
+
+  <div className="flex flex-col gap-1">
+    <label className="text-sm font-medium text-gray-600">Password</label>
+    <input
+      {...register("password")}
+      type="password"
+      placeholder="Enter password"
+      className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
+  </div>
+
+  <div className="flex flex-col sm:flex-row gap-3 mt-2">
+    <button
+      type="submit"
+      className="flex-1 h-10 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition"
+    >
+      Update Profile
+    </button>
+
+    <button
+      type="button"
+      onClick={DeleteProducthandler}
+      className="flex-1 h-10 rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-red-700 transition"
+    >
+      Delete
+    </button>
+  </div>
+</form>
   ): "loading"
 }
 

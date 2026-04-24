@@ -32,7 +32,7 @@ toast.success("Product Created ✅");
 <main className="flex justify-center py-2 px-4">
   <form
     onSubmit={handleSubmit(CreateProducthandler)}
-    className="w-full max-w-110 bg-gray-200 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
+    className="w-full max-w-110 bg-gray-200 border  rounded-xl p-6 sm:p-8 flex flex-col gap-4"
   >
     <header className="mb-2">
       <h2 className="text-lg font-medium text-gray-900">Create new product</h2>

@@ -56,7 +56,7 @@ toast.success("Product Deleted ");
   return product  ? (
 <section>
   <div className=" bg-gray-100 p-6">
-  <div className="max-w-6xl mx-auto bg-white p-6 rounded-xl shadow-md grid md:grid-cols-2 gap-8">
+  <div className="max-w-6xl mx-auto bg-white border p-6 rounded-xl shadow-md grid md:grid-cols-2 gap-8">
     
     {/* LEFT: Images */}
     <div className="flex flex-col gap-4">
@@ -125,13 +125,13 @@ toast.success("Product Deleted ");
   </div>
 </div>
 
-<div  className="flex justify-center py-10 px-4">
+<div  className="flex justify-center  py-10 px-4">
 {users && users?.isAdmin &&(
    <form
     onSubmit={handleSubmit(UpdateProducthandler)}
-    className="w-full max-w-110 bg-gray-200 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
+    className="w-full max-w-110 bg-gray-200 border rounded-xl p-6 sm:p-8 flex flex-col gap-4"
   > 
-    <header className="mb-2">
+    <header className="">
       <h2 className="text-lg font-medium text-gray-900">Update product</h2>
       <p className="text-sm text-gray-500 mt-1">Fill in the details to update a  product.</p>
     </header>
