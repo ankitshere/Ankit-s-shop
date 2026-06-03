@@ -1,0 +1,71 @@
+{
+  "users": [
+    {
+      "user": "ankit",
+      "email": "a@a.a",
+      "password": "1234",
+      "id": "ORr8PiM6AV4",
+      "isAdmin": true
+    },
+    {
+      "user": "Ankit yadav ",
+      "email": "ankit@gmail.com",
+      "password": "2121",
+      "id": "_OrH7amLBXE",
+      "isAdmin": true,
+      "username": ""
+    }
+  ],
+  "products": [
+    {
+      "title": "Forever25",
+      "images": "https://www.forever52.in/cdn/shop/files/FLF012-1_346c5503-6995-49ec-b40b-b0e1670a0b5b.jpg?v=1769490601&width=1780",
+      "description": "Beauty desc",
+      "price": "2222",
+      "category": "Beauty Product",
+      "id": "mWzN7k9arkY",
+      "Category": "Beauty Product"
+    },
+    {
+      "title": "beauty ",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTll3zQg-JVeob-Om4_Cpcty6XoflNKufLy8w&s",
+      "description": "Beauty desc",
+      "price": "222",
+      "category": "Beauty Product",
+      "id": "4AA2mdLI1HI"
+    },
+    {
+      "title": "Lunar Timepiece",
+      "images": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=500",
+      "description": "Leather & Sapphire",
+      "price": "185.00",
+      "category": "",
+      "id": "bu7qLSTU5AA"
+    },
+    {
+      "title": "Swift Runner",
+      "images": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+      "description": "Performance Athletics",
+      "price": "145.00",
+      "category": "",
+      "id": "gI0oFuR1MKA"
+    },
+    {
+      "title": "Soleil Shades",
+      "images": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500",
+      "description": "UV400 Protected",
+      "price": "120.00",
+      "category": "",
+      "id": "nAHpZgmvVx0"
+    },
+    {
+      "title": "Optic M1",
+      "images": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500",
+      "description": "Retro Digital Series",
+      "price": "850.00",
+      "category": "",
+      "id": "Px_dLVHLzu8"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
