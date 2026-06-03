@@ -12,6 +12,7 @@ import AuthWrappe from './AuthWrapper'
  const MainRouter = () => {
 
 const user = useSelector((state) => state.usersreducer.user)
+
 console.log(user)
    return (
         <Routes>
