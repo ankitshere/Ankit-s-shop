@@ -142,20 +142,26 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="flex gap-1.5 sm:gap-2 mt-auto pt-2">
-          <button
-            onClick={handleCart}
-            className={`flex-1 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-semibold text-white border-none cursor-pointer transition-colors flex items-center justify-center gap-1
-              ${addedToCart ? 'bg-green-600' : 'bg-blue-600 hover:bg-blue-700'}`}
-          >
-            🛒 <span className="hidden sm:inline">{addedToCart ? 'Added!' : 'Add to Cart'}</span>
-            <span className="sm:hidden">{addedToCart ? '✓' : 'Add'}</span>
-          </button>
-          <Link
-            to={`/Products/${product.id}`}
-            className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg border border-gray-200 text-[11px] sm:text-xs font-semibold text-gray-600 hover:border-blue-400 hover:text-blue-600 transition-colors no-underline flex items-center whitespace-nowrap"
-          >
-            Details
-          </Link>
+      
+         <Link
+  to={`/Products/${product.id}`}
+  className="
+  
+    w-full text-center sm:px-5
+    py-2
+    text-xs sm:text-sm
+    font-medium
+    rounded-xl
+    border border-blue-500
+    text-blue-500
+    hover:bg-blue-500
+    hover:text-white
+    transition-all duration-300
+    shadow-sm hover:shadow-md
+  "
+>
+  Details
+</Link>
         </div>
       </div>
     </div>

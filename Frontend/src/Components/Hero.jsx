@@ -78,7 +78,7 @@ const Hero = () => {
 
           {/* Right Content */}
           <div className="relative flex justify-center  w-full  lg:justify-end">
-            <div className="bg-white p-5 rounded-[28px] shadow-sm w-full max-w-130">
+            <div className="bg-white p-5 rounded-[28px]   shadow-sm w-full max-w-130">
               <div className="overflow-hidden rounded-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1624978960894-bed9218acd39?q=80&w=1029&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -89,7 +89,7 @@ const Hero = () => {
 
               <div className="flex items-center justify-between mt-4">
                 <h3 className="text-2xl font-bold text-slate-900">
-                  Aura Wireless Pro
+                  Aura Wireless 
                 </h3>
 
                 <span className="font-bold text-[#5B4CF4]">
@@ -99,7 +99,7 @@ const Hero = () => {
             </div>
 
             {/* Floating Purchase Card */}
-            <div className="absolute -bottom-4 left-0 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3">
+            <div className="absolute -bottom-4  left-0 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3 animate-bounce">
               <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
                 🛍️
               </div>
@@ -109,7 +109,7 @@ const Hero = () => {
                   Just Purchased
                 </p>
                 <p className="font-semibold text-slate-900">
-                  Smart Watch Gen 5
+                  Aura Wireless Pro
                 </p>
               </div>
             </div>
