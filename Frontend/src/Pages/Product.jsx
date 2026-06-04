@@ -99,7 +99,7 @@ const ProductCard = ({ product }) => {
     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-200">
 
       {/* Image */}
-      <div className="relative h-44 bg-gray-900 overflow-hidden">
+      <div className="relative h-36 sm:h-40 md:h-44 bg-gray-900 overflow-hidden">
         <img
           src={product.images || product.image}
           alt={product.title}
@@ -117,21 +117,21 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Info */}
-      <div className="p-3 flex flex-col gap-1.5 flex-1">
+      <div className="p-2.5 sm:p-3 flex flex-col gap-1.5 flex-1">
         <div className="flex items-center gap-1">
           <span className="text-amber-400 text-xs">★</span>
           <span className="text-xs text-gray-700 font-medium">{product.rating?.rate || 4.3}</span>
           <span className="text-xs text-gray-400">(120)</span>
         </div>
 
-        <h2 className="text-[13px] font-medium text-gray-900 leading-snug line-clamp-2 m-0">
+        <h2 className="text-[12px] sm:text-[13px] font-medium text-gray-900 leading-snug line-clamp-2 m-0">
           {product.title}
         </h2>
 
         <p className="text-[11px] text-gray-400 capitalize m-0">{product.category}</p>
 
         <div className="flex items-center gap-1.5 flex-wrap mt-0.5">
-          <span className="text-sm font-bold text-gray-900">₹{product.price}</span>
+          <span className="text-xs sm:text-sm font-bold text-gray-900">₹{product.price}</span>
           {!isNew && (
             <>
               <span className="text-[11px] text-gray-400 line-through">₹{origPrice}</span>
@@ -141,17 +141,18 @@ const ProductCard = ({ product }) => {
           {isNew && <span className="text-[11px] font-bold text-red-600">NEW</span>}
         </div>
 
-        <div className="flex gap-2 mt-auto pt-2">
+        <div className="flex gap-1.5 sm:gap-2 mt-auto pt-2">
           <button
             onClick={handleCart}
-            className={`flex-1 py-2 rounded-lg text-xs font-semibold text-white border-none cursor-pointer transition-colors flex items-center justify-center gap-1
+            className={`flex-1 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-semibold text-white border-none cursor-pointer transition-colors flex items-center justify-center gap-1
               ${addedToCart ? 'bg-green-600' : 'bg-blue-600 hover:bg-blue-700'}`}
           >
-            🛒 {addedToCart ? 'Added!' : 'Add to Cart'}
+            🛒 <span className="hidden sm:inline">{addedToCart ? 'Added!' : 'Add to Cart'}</span>
+            <span className="sm:hidden">{addedToCart ? '✓' : 'Add'}</span>
           </button>
           <Link
             to={`/Products/${product.id}`}
-            className="px-3 py-2 rounded-lg border border-gray-200 text-xs font-semibold text-gray-600 hover:border-blue-400 hover:text-blue-600 transition-colors no-underline flex items-center"
+            className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg border border-gray-200 text-[11px] sm:text-xs font-semibold text-gray-600 hover:border-blue-400 hover:text-blue-600 transition-colors no-underline flex items-center whitespace-nowrap"
           >
             Details
           </Link>
@@ -163,7 +164,7 @@ const ProductCard = ({ product }) => {
 
 const SkeletonCard = () => (
   <div className="bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col animate-pulse">
-    <div className="h-44 bg-gray-200" />
+    <div className="h-36 sm:h-40 md:h-44 bg-gray-200" />
     <div className="p-3 flex flex-col gap-2">
       <div className="h-3 bg-gray-200 rounded w-1/3" />
       <div className="h-3 bg-gray-200 rounded w-full" />
@@ -183,8 +184,8 @@ const Product = () => {
 
   if (!products || products.length === 0) {
     return (
-      <div className="bg-white min-h-screen px-6 py-5">
-        <div className="grid grid-cols-4 gap-4">
+      <div className="bg-white min-h-screen px-3 sm:px-6 py-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {[...Array(8)].map((_, i) => <SkeletonCard key={i} />)}
         </div>
       </div>
@@ -213,10 +214,10 @@ const Product = () => {
   const pageNums = [1, 2, 3]
 
   return (
-    <div className="bg-white min-h-screen px-6 py-5">
+    <div className="bg-white min-h-screen px-3 sm:px-6 py-4 sm:py-5">
 
       {/* Search + Filter */}
-      <div className="flex gap-2.5 mb-4">
+      <div className="flex gap-2 sm:gap-2.5 mb-4">
         <div className="flex-1 relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
           <input
@@ -226,26 +227,29 @@ const Product = () => {
             className="w-full h-9 border border-gray-200 rounded-lg pl-8 pr-3 text-[13px] outline-none text-gray-900 bg-white focus:border-indigo-400"
           />
         </div>
-        <button className="h-9 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-[13px] font-semibold flex items-center gap-1.5 border-none cursor-pointer transition-colors">
-          ⚙ Filters
+        <button className="h-9 px-3 sm:px-4 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-[13px] font-semibold flex items-center gap-1.5 border-none cursor-pointer transition-colors whitespace-nowrap">
+          ⚙ <span className="hidden sm:inline">Filters</span>
         </button>
       </div>
 
       {/* Tabs + Meta */}
-      <div className="flex justify-between items-center mb-5 flex-wrap gap-2">
-        <div className="flex gap-1.5">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 sm:mb-5 gap-2">
+        {/* Tabs — scrollable on mobile */}
+        <div className="flex gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-hide">
           {TABS.map(t => (
             <button
               key={t}
               onClick={() => { setTab(t); setPage(1) }}
-              className={`px-4 py-1 rounded-full text-xs font-medium cursor-pointer border transition-colors
+              className={`px-3 sm:px-4 py-1 rounded-full text-xs font-medium cursor-pointer border transition-colors whitespace-nowrap flex-shrink-0
                 ${tab === t
                   ? 'bg-indigo-600 text-white border-indigo-600'
                   : 'bg-white text-gray-500 border-gray-200 hover:border-indigo-300 hover:text-indigo-500'}`}
             >{t}</button>
           ))}
         </div>
-        <div className="flex items-center gap-3">
+
+        {/* Results + Sort */}
+        <div className="flex items-center gap-3 self-end sm:self-auto">
           <span className="text-xs text-gray-500">{sorted.length} results</span>
           <span className="text-xs text-gray-500">
             Sort by:{' '}
@@ -263,8 +267,8 @@ const Product = () => {
         </div>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      {/* Grid — 1 col mobile, 2 sm, 3 md, 4 lg */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
         {paginated.map(p => <ProductCard key={p.id} product={p} />)}
       </div>
 
@@ -273,7 +277,7 @@ const Product = () => {
         <div className="text-center mb-4">
           <button
             onClick={() => setPage(pg => pg + 1)}
-            className="px-9 py-2 rounded-lg border border-gray-200 bg-white text-[13px] text-gray-700 cursor-pointer hover:bg-gray-50 transition-colors"
+            className="w-full sm:w-auto px-9 py-2 rounded-lg border border-gray-200 bg-white text-[13px] text-gray-700 cursor-pointer hover:bg-gray-50 transition-colors"
           >Load More Products</button>
         </div>
       )}
@@ -298,8 +302,6 @@ const Product = () => {
           >{totalPages}</button>
         )}
       </div>
-
- 
 
     </div>
   )
