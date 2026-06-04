@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -35,13 +36,13 @@ const Hero = () => {
 
             {/* Buttons */}
             <div className="mt-8 flex items-center gap-4">
-              <button className="bg-[#5B4CF4] text-white px-8 py-4 rounded-full font-medium shadow-lg shadow-indigo-200 hover:scale-105 transition">
+              <Link to="/product" className="bg-[#5B4CF4] text-white px-8 py-4 rounded-full font-medium shadow-lg shadow-indigo-200 hover:scale-105 transition">
                 Shop Now
-              </button>
+              </Link>
 
-              <button className="border border-slate-300 px-8 py-4 rounded-full text-slate-700 font-medium hover:bg-white transition">
+              <Link to="/product" className="border border-slate-300 px-8 py-4 rounded-full text-slate-700 font-medium hover:bg-white transition">
                 Explore Collection
-              </button>
+              </Link>
             </div>
 
             {/* Reviews */}
@@ -80,7 +81,7 @@ const Hero = () => {
             <div className="bg-white p-5 rounded-[28px] shadow-sm w-full max-w-130">
               <div className="overflow-hidden rounded-2xl">
                 <img
-                  src="https://lh3.googleusercontent.com/aida/ADBb0uhREUaDSb5uAG2hy-_UrWsuYDph9LhAK2B1P06HhHvNVxEMw7LrrwmqVCoSHwbZ4bQ_C0l1q19EsdC7cDEIHvSvYuoAqArPoAHM1JCQlcSyZRuC7v-LreNLmegVjec4gdJ9z6KOxkGz1-GtTRBvFwzgWGqbuN-nOTN3mrxzpJg_O8iWTcr16L6psNwgHtJNfJWFSpicCFM1fPiLylnDP5o6v-JBMzKyEXElx3saBbxyTyi5ezSxmwR5Z9I"
+                  src="https://images.unsplash.com/photo-1624978960894-bed9218acd39?q=80&w=1029&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Headphone"
                   className="w-full h-80 object-cover"
                 />

@@ -16,7 +16,7 @@ const Categories = () => {
       title: "Tech ",
       description: "Shop Tech",
       image:
-        "https://lh3.googleusercontent.com/aida/ADBb0uhREUaDSb5uAG2hy-_UrWsuYDph9LhAK2B1P06HhHvNVxEMw7LrrwmqVCoSHwbZ4bQ_C0l1q19EsdC7cDEIHvSvYuoAqArPoAHM1JCQlcSyZRuC7v-LreNLmegVjec4gdJ9z6KOxkGz1-GtTRBvFwzgWGqbuN-nOTN3mrxzpJg_O8iWTcr16L6psNwgHtJNfJWFSpicCFM1fPiLylnDP5o6v-JBMzKyEXElx3saBbxyTyi5ezSxmwR5Z9I",
+        "https://images.unsplash.com/photo-1641961924002-913bd679ee1e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: 3,
