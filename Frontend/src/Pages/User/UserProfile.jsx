@@ -50,48 +50,59 @@ const DeleteProducthandler = () => {
 };
 
   return users ?  (
-<form
+    
+<main  className='px-5  '  >
+  <form
   onSubmit={handleSubmit(updateProfilehandler)}
-  className="w-full max-w-md mx-auto mt-6 bg-gray-300 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
+  className="w-full  max-w-md mx-auto mt-8 bg-white border border-slate-200 rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col gap-5"
 >
-  <h2 className="text-2xl text-center font-semibold text-gray-900">
+  <h2 className="text-3xl text-center font-bold text-slate-900 mb-2">
     Your Profile
   </h2>
 
-  <div className="flex flex-col gap-1">
-    <label className="text-sm font-medium text-gray-600">Username</label>
+  <div className="flex flex-col gap-2">
+    <label className="text-sm font-semibold text-slate-700">
+      Username
+    </label>
+
     <input
       {...register("username")}
       type="text"
       placeholder="Enter username"
-      className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+      className="h-12 px-4 rounded-xl border border-slate-300 bg-slate-50 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
     />
   </div>
 
-  <div className="flex flex-col gap-1">
-    <label className="text-sm font-medium text-gray-600">Email</label>
+  <div className="flex flex-col gap-2">
+    <label className="text-sm font-semibold text-slate-700">
+      Email
+    </label>
+
     <input
       {...register("email")}
       type="email"
       placeholder="Enter email"
-      className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+      className="h-12 px-4 rounded-xl border border-slate-300 bg-slate-50 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
     />
   </div>
 
-  <div className="flex flex-col gap-1">
-    <label className="text-sm font-medium text-gray-600">Password</label>
+  <div className="flex flex-col gap-2">
+    <label className="text-sm font-semibold text-slate-700">
+      Password
+    </label>
+
     <input
       {...register("password")}
       type="password"
       placeholder="Enter password"
-      className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+      className="h-12 px-4 rounded-xl border border-slate-300 bg-slate-50 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
     />
   </div>
 
-  <div className="flex flex-col sm:flex-row gap-3 mt-2">
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
     <button
       type="submit"
-      className="flex-1 h-10 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition"
+      className="h-12 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-all duration-300"
     >
       Update Profile
     </button>
@@ -99,12 +110,13 @@ const DeleteProducthandler = () => {
     <button
       type="button"
       onClick={DeleteProducthandler}
-      className="flex-1 h-10 rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-red-700 transition"
+      className="h-12 rounded-xl bg-red-500 text-white text-sm font-semibold hover:bg-red-600 transition-all duration-300"
     >
       Delete
     </button>
   </div>
 </form>
+</main>
   ): "loading"
 }
 
