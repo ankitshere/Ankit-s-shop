@@ -29,74 +29,177 @@ toast.success("Product Created ✅");
 
     return (
      
-<main className="flex justify-center py-2 px-4">
+<main className="min-h-screen bg-slate-100 flex justify-center items-center px-4 sm:px-6 py-8">
   <form
     onSubmit={handleSubmit(CreateProducthandler)}
-    className="w-full max-w-110 bg-gray-200 border  rounded-xl p-6 sm:p-8 flex flex-col gap-4"
+    className="
+      w-full
+      max-w-md
+      sm:max-w-xl
+      lg:max-w-3xl
+      bg-white
+      rounded-3xl
+      shadow-xl
+      border
+      border-slate-200
+      p-5
+      sm:p-8
+    "
   >
-    <header className="mb-2">
-      <h2 className="text-lg font-medium text-gray-900">Create new product</h2>
-      <p className="text-sm text-gray-500 mt-1">Fill in the details to add a new  product.</p>
-    </header>
+    {/* Header */}
+    <div className="mb-8">
+      <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+        Create New Product
+      </h2>
 
-    <label className="flex flex-col gap-1.5">
-      <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Product name</span>
+      <p className="text-sm sm:text-base text-slate-500 mt-2">
+        Fill in the details to add a new product.
+      </p>
+    </div>
+
+    {/* Product Name */}
+    <div className="mb-5">
+      <label className="block text-sm font-semibold text-slate-700 mb-2">
+        Product Name
+      </label>
+
       <input
-       {...register("title")}
+        {...register("title")}
         type="text"
-        placeholder="e.g. Wireless Headphones"
-        className="h-9 px-3 rounded-lg border border-blue-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all w-full"
+        placeholder="Wireless Headphones"
+        className="
+          w-full
+          h-12
+          px-4
+          rounded-xl
+          border
+          border-slate-200
+          bg-slate-50
+          focus:outline-none
+          focus:ring-2
+          focus:ring-indigo-500
+        "
       />
-    </label>
+    </div>
 
-    <label className="flex flex-col gap-1.5">
-      <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Image URL</span>
+    {/* Image URL */}
+    <div className="mb-5">
+      <label className="block text-sm font-semibold text-slate-700 mb-2">
+        Image URL
+      </label>
+
       <input
         {...register("images")}
         type="url"
         placeholder="https://example.com/image.jpg"
-        className="h-9 px-3 rounded-lg border border-blue-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all w-full"
+        className="
+          w-full
+          h-12
+          px-4
+          rounded-xl
+          border
+          border-slate-200
+          bg-slate-50
+          focus:outline-none
+          focus:ring-2
+          focus:ring-indigo-500
+        "
       />
-    </label>
+    </div>
 
-    <label className="flex flex-col gap-1.5">
-      <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Description</span>
-      <input
+    {/* Description */}
+    <div className="mb-5">
+      <label className="block text-sm font-semibold text-slate-700 mb-2">
+        Description
+      </label>
+
+      <textarea
         {...register("description")}
-        type="text"
-        placeholder="Brief product description"
-        className="h-9 px-3 rounded-lg border border-blue-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all w-full"
+        rows={4}
+        placeholder="Write product description..."
+        className="
+          w-full
+          p-4
+          rounded-xl
+          border
+          border-slate-200
+          bg-slate-50
+          resize-none
+          focus:outline-none
+          focus:ring-2
+          focus:ring-indigo-500
+        "
       />
-    </label>
+    </div>
 
-    <section className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-      <label className="flex flex-col gap-1.5">
-        <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Price</span>
+    {/* Price & Category */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div>
+        <label className="block text-sm font-semibold text-slate-700 mb-2">
+          Price
+        </label>
+
         <input
           {...register("price")}
           type="number"
-          placeholder="0.00"
-          className="h-9 px-3 rounded-lg border border-blue-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all w-full"
+          placeholder="₹0.00"
+          className="
+            w-full
+            h-12
+            px-4
+            rounded-xl
+            border
+            border-slate-200
+            bg-slate-50
+            focus:outline-none
+            focus:ring-2
+            focus:ring-indigo-500
+          "
         />
-      </label>
-      <label className="flex flex-col gap-1.5">
-        <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Category</span>
+      </div>
+
+      <div>
+        <label className="block text-sm font-semibold text-slate-700 mb-2">
+          Category
+        </label>
+
         <input
           {...register("category")}
           type="text"
-          placeholder="e.g. Electronics"
-          className="h-9 px-3 rounded-lg border border-blue-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all w-full"
+          placeholder="Electronics"
+          className="
+            w-full
+            h-12
+            px-4
+            rounded-xl
+            border
+            border-slate-200
+            bg-slate-50
+            focus:outline-none
+            focus:ring-2
+            focus:ring-indigo-500
+          "
         />
-      </label>
-    </section>
+      </div>
+    </div>
 
+    {/* Submit Button */}
     <button
       type="submit"
-      className="mt-2 h-10 w-full rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 active:scale-[0.98] transition-all"
+      className="
+        w-full
+        h-12
+        rounded-xl
+        bg-indigo-600
+        text-white
+        font-semibold
+        hover:bg-indigo-700
+        transition-all
+        duration-300
+      "
     >
-      Create product
+      Create Product
     </button>
-
   </form>
 </main>
     )
