@@ -98,10 +98,10 @@ const Footer = () => {
               Quick Links
             </h3>
  <div className="flex flex-col  item-center justify-between gap-3  ">
- <Link to="/Products"    className="hover:underline-blue-200">
+ <Link to="/Product"    className="hover:underline-blue-200">
   Products
  </Link>
- <Link to="/home">
+ <Link to="/">
 Home
  </Link>
  <Link to="/User/UserProfile">
