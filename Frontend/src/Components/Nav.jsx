@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { asynclogoutinuser } from "../Store/actions/UserAction";
+import { User } from "lucide-react";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,7 @@ const Nav = () => {
 
   const initials = user?.name
     ? user.name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)
-    : "U";
+    :<User />;
 
   const linkClass = ({ isActive }) =>
     `flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-150 ${
@@ -34,16 +35,15 @@ const Nav = () => {
 
   return (
     <nav className="bg-white border-b border-gray-200 px-6 sticky top-0 z-50">
-      {/* Desktop row */}
+    
       <div className="flex items-center justify-between h-16">
-        {/* Brand */}
+        
         <NavLink to="/" className="text-xl font-bold text-gray-900 tracking-tight">
           <span className="text-blue-600">Ankit</span>'s Shop
         </NavLink>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-2">
-          {/* Search */}
+        
           <form
             onSubmit={handleSearch}
             className="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-4 py-2 focus-within:border-blue-400 transition-colors"
@@ -114,7 +114,7 @@ const Nav = () => {
                 <div className="w-7 h-7 rounded-full bg-blue-100 border border-blue-400 flex items-center justify-center text-xs font-bold text-blue-700 shrink-0">
                   {initials}
                 </div>
-                Settings
+               Profile
               </NavLink>
 
               <button
@@ -139,7 +139,6 @@ const Nav = () => {
           )}
         </div>
 
-        {/* Hamburger */}
         <button
           className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
           onClick={() => setOpen(!open)}
@@ -158,7 +157,7 @@ const Nav = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+  
       {open && (
         <div className="md:hidden border-t border-gray-100 py-3 flex flex-col gap-1">
           {/* Mobile search */}
@@ -227,7 +226,7 @@ const Nav = () => {
                 <div className="w-7 h-7 rounded-full bg-blue-100 border border-blue-400 flex items-center justify-center text-xs font-bold text-blue-700">
                   {initials}
                 </div>
-                Settings
+               Profile
               </NavLink>
 
               <button

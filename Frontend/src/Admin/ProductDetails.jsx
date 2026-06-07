@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { asyncDeteleProduct, asyncupdateProduct } from '../Store/actions/ProductAction'
 import { ToastContainer, toast } from "react-toastify";
+import Footer from '../Components/Footer'
+import Product from '../Pages/Product'
+import Similerproduct from '../Components/Similerproduct'
 
 const ProductDetails = () => {
 
@@ -51,6 +54,10 @@ toast.success("Product Deleted ");
 
         
     };
+
+
+
+
 
 
   return product  ? (
@@ -121,8 +128,15 @@ toast.success("Product Deleted ");
       </div>
 
     </div>
-
   </div>
+
+  <Similerproduct
+  
+   
+    products={products}
+  product={product}
+  />
+
 </div>
 
 <div className="min-h-screen bg-slate-100 flex justify-center items-center px-4 sm:px-6 lg:px-8 py-8">
@@ -361,6 +375,8 @@ toast.success("Product Deleted ");
     </form>
   )}
 </div>
+
+<Footer/>
 </section>
   ):"loading product..."
 }

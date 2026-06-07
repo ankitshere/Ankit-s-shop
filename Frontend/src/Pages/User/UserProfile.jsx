@@ -18,7 +18,7 @@ const users = useSelector((state) => state.usersreducer?.user)
   const dispatch = useDispatch();
     const { reset, register, handleSubmit } = useForm({
       defaultValues:{
-        user:users?.username,
+        user:users?.user,
         email:users?.email,
         password:users?.password,
               
@@ -35,6 +35,7 @@ const updateProfilehandler = (formData) => {
 
 
 const UpdateUserHandler = (user) => {
+
 I
 dispatch(asyncupdateuser (users.id, user));
 };
@@ -47,11 +48,12 @@ navigate("/login");
 const DeleteProducthandler = () => {
   dispatch(asyncDeteleuser(users.id));
 
+
 };
 
   return users ?  (
     
-<main  className='px-5  '  >
+<main  className='px-5   '  >
   <form
   onSubmit={handleSubmit(updateProfilehandler)}
   className="w-full  max-w-md mx-auto mt-8 bg-white border border-slate-200 rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col gap-5"
@@ -66,7 +68,7 @@ const DeleteProducthandler = () => {
     </label>
 
     <input
-      {...register("username")}
+      {...register("user")}
       type="text"
       placeholder="Enter username"
       className="h-12 px-4 rounded-xl border border-slate-300 bg-slate-50 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
@@ -102,7 +104,8 @@ const DeleteProducthandler = () => {
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
     <button
       type="submit"
-      className="h-12 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-all duration-300"
+         onClick={UpdateUserHandler}
+      className="h-12 rounded-xl bg-indigo-600 text-white text-sm hover:bg-blend-color-dodge font-semibold hover:bg-indigo-700 transition-all duration-300"
     >
       Update Profile
     </button>

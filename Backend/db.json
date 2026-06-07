@@ -14,6 +14,13 @@
       "id": "_OrH7amLBXE",
       "isAdmin": true,
       "username": ""
+    },
+    {
+      "user": " Ankit  Yadav ",
+      "email": "ankit@me.com",
+      "password": "1234",
+      "id": "01FEcJR-vBI",
+      "isAdmin": false
     }
   ],
   "products": [

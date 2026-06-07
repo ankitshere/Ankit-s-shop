@@ -19,46 +19,9 @@ const Register = () => {
   };
 
   return (
-//    <div className="min-h-screen flex items-center justify-center px-4">
-//   <form
-//     onSubmit={handleSubmit(handleLogin)}
-//     className="w-full max-w-md bg-gray-300 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col gap-4"
-//   >
-//     <input
-//       {...register("user")}
-//       type="text"
-//       placeholder="Username"
-//       className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 w-full"
-//     />
 
-//     <input
-//       {...register("email")}
-//       type="email"
-//       placeholder="email.com"
-//       className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 w-full"
-//     />
 
-//     <input
-//       {...register("password")}
-//       type="password"
-//       placeholder="Password"
-//       className="h-10 px-3 rounded-lg border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-gray-300 w-full"
-//     />
-
-//     <button className="mt-2 h-10 w-full rounded-lg bg-gray-500 text-white font-medium hover:bg-gray-600 transition">
-//       Register User
-//     </button>
-
-//     <p className="text-sm text-center">
-//       Already have an Account{" "}
-//       <Link className="text-blue-500" to="/login">
-//         Login
-//       </Link>
-//     </p>
-//   </form>
-// </div>
-
-<div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-slate-100 flex items-center justify-center px-4">
+<div className="min-h-screen bg-linear-to-br from-slate-100 via-white to-slate-100 flex items-center justify-center px-4">
   <form
     onSubmit={handleSubmit(handleLogin)}
     className="w-full max-w-md bg-white border border-slate-200 rounded-3xl shadow-xl p-6 sm:p-8"
