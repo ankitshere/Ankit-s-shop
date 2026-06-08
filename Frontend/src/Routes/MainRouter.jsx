@@ -9,6 +9,7 @@ import ProductDetails from '../Admin/ProductDetails'
 import { useSelector } from 'react-redux'
 import UserProfile from '../Pages/User/UserProfile'
 import AuthWrappe from './AuthWrapper'
+import Page404 from '../Pages/Page404';
  const MainRouter = () => {
 
 const user = useSelector((state) => state.usersreducer.user)
@@ -17,7 +18,7 @@ console.log(user)
    return (
         <Routes>
         <Route path="/" element={   <Home />} />
-
+         <Route path='/*'    element={<Page404/>}/>
         <Route path="/product" element={<AuthWrappe><Product /></AuthWrappe>} />
         <Route path="/login" element={<Login />} />
         <Route path="/User/UserProfile" element={<AuthWrappe><UserProfile /></AuthWrappe>} />
