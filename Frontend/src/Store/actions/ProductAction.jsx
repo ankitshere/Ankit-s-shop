@@ -11,7 +11,7 @@ import axios from "axios";
 export const asyncloadProduct = () => async (dispatch, getState) => {
   try {
     
-    const {data}=await axios.get("http://localhost:3000/products");
+    const {data}=await axios.get("https://ankit-s-shop.onrender.com/products");
   dispatch(loadproduct(data))
 
   }
@@ -22,7 +22,7 @@ export const asyncloadProduct = () => async (dispatch, getState) => {
 export const asyncCreateProduct = (product) => async(dispatch) => {
   try {
     
-     await axios.post("http://localhost:3000/products", product);
+     await axios.post("https://ankit-s-shop.onrender.com/products", product);
 dispatch(asyncloadProduct())
      
   }
@@ -33,7 +33,7 @@ dispatch(asyncloadProduct())
 export const asyncupdateProduct = ( id ,product) => async(dispatch) => {
   try {
     
-     await axios.patch(`http://localhost:3000/products/${id}`, product);
+     await axios.patch(`https://ankit-s-shop.onrender.com/products/${id}`, product);
 dispatch(asyncloadProduct());
      
   }
@@ -44,7 +44,7 @@ dispatch(asyncloadProduct());
 export const asyncDeteleProduct = ( id ) => async(dispatch) => {
   try {
     
-     await axios.delete(`http://localhost:3000/products/${id}`);
+     await axios.delete(`https://ankit-s-shop.onrender.com/products/${id}`);
 dispatch(asyncloadProduct());
      
   }

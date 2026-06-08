@@ -22,8 +22,8 @@ const Login = () => {
   return (
 
 
-<div className="w-full min-h-screen bg-gradient-to-br from-slate-100 via-white to-slate-100 flex items-center justify-center px-4">
-  <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl shadow-xl p-6 sm:p-8">
+<div className="w-full  bg-linear-to-br from-slate-100 via-white to-slate-100 flex items-center justify-center ">
+  <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl shadow-xl sm:p-8">
 
     {/* Header */}
     <div className="text-center mb-8">

@@ -123,6 +123,7 @@ const Product = () => {
   const [sort, setSort] = useState('Popularity')
   const [page, setPage] = useState(1)
 
+  console.log(products)
   if (!products || products.length === 0) {
     return (
       <div className="bg-white min-h-screen px-3 sm:px-6 py-5">
